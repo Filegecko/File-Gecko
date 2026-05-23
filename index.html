@@ -551,6 +551,236 @@ function toggleVendorPopup(show) {
             Home
 
         </button>
+        
+<!-- CONTACT BUTTON -->
+<div class="w-full flex justify-start relative z-10 -mb-6">
+
+    <button
+        onclick="toggleContactPopup(true)"
+        class="flex items-center gap-2 bg-slate-100 hover:bg-emerald-50 hover:text-emerald-600 px-4 py-3 rounded-2xl text-sm font-semibold transition-all">
+
+        <span>📞</span>
+
+        <span>Contact Us</span>
+
+    </button>
+
+</div>
+
+<!-- CONTACT POPUP -->
+<div id="contactPopupOverlay"
+     class="hidden fixed inset-0 z-[999] bg-black/40 backdrop-blur-sm">
+
+    <!-- BACKDROP -->
+    <div class="absolute inset-0"
+         onclick="toggleContactPopup(false)">
+    </div>
+
+    <!-- POPUP -->
+    <div class="relative z-10 w-full h-full flex items-center justify-center p-4">
+
+        <div class="w-full max-w-md bg-white rounded-3xl p-6 shadow-2xl relative animate-popupScale">
+
+            <!-- CLOSE -->
+            <button
+                onclick="toggleContactPopup(false)"
+                class="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold">
+
+                ✕
+
+            </button>
+
+            <!-- TITLE -->
+            <h2 class="text-xl font-extrabold text-slate-800">
+
+                Contact PricePadi
+
+            </h2>
+
+            <p class="text-sm text-slate-500 mt-2">
+
+                Choose how you want to contact us.
+
+            </p>
+
+            <!-- CONTACT OPTIONS -->
+            <div class="mt-6 flex flex-col gap-4">
+
+                <!-- WHATSAPP -->
+                <a href="https://wa.me/2347032066059"
+                   target="_blank"
+                   class="flex items-center gap-3 bg-emerald-50 hover:bg-emerald-100 px-4 py-4 rounded-2xl transition-all">
+
+                    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png"
+                         class="w-8 h-8 object-contain">
+
+                    <div>
+
+                        <div class="font-bold text-slate-800 text-sm">
+                            WhatsApp Chat
+                        </div>
+
+                        <div class="text-xs text-slate-500">
+                            Fast direct support
+                        </div>
+
+                    </div>
+
+                </a>
+
+                <!-- EMAIL -->
+                <button
+                    onclick="showEmailForm()"
+                    class="flex items-center gap-3 bg-slate-100 hover:bg-slate-200 px-4 py-4 rounded-2xl transition-all text-left">
+
+                    <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png"
+                         class="w-8 h-8 object-contain">
+
+                    <div>
+
+                        <div class="font-bold text-slate-800 text-sm">
+                            Send Email
+                        </div>
+
+                        <div class="text-xs text-slate-500">
+                            Contact through Gmail
+                        </div>
+
+                    </div>
+
+                </button>
+
+            </div>
+
+            <!-- EMAIL FORM -->
+            <div id="emailContactForm"
+                 class="hidden mt-6 flex flex-col gap-4">
+
+                <input
+                    id="contactName"
+                    type="text"
+                    placeholder="Your Name"
+                    class="w-full bg-slate-100 rounded-2xl px-4 py-3 text-sm outline-none">
+
+                <input
+                    id="contactWhatsapp"
+                    type="text"
+                    placeholder="WhatsApp Number"
+                    class="w-full bg-slate-100 rounded-2xl px-4 py-3 text-sm outline-none">
+
+                <textarea
+                    id="contactMessage"
+                    rows="5"
+                    placeholder="Type your message..."
+                    class="w-full bg-slate-100 rounded-2xl px-4 py-3 text-sm outline-none resize-none"></textarea>
+
+                <button
+                    onclick="sendContactEmail()"
+                    class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 rounded-2xl transition-all">
+
+                    Send Email
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<style>
+
+@keyframes popupScale {
+
+    0% {
+        transform: scale(.85);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+}
+
+.animate-popupScale {
+
+    animation: popupScale .25s ease;
+
+}
+
+</style>
+
+<script>
+
+function toggleContactPopup(show) {
+
+    const popup =
+        document.getElementById("contactPopupOverlay");
+
+    if (!popup) return;
+
+    if (show) {
+
+        popup.classList.remove("hidden");
+
+        document.body.style.overflow = "hidden";
+
+    } else {
+
+        popup.classList.add("hidden");
+
+        document.body.style.overflow = "";
+
+    }
+
+}
+
+function showEmailForm() {
+
+    document
+        .getElementById("emailContactForm")
+        .classList.remove("hidden");
+
+}
+
+function sendContactEmail() {
+
+    const name =
+        document.getElementById("contactName").value;
+
+    const whatsapp =
+        document.getElementById("contactWhatsapp").value;
+
+    const message =
+        document.getElementById("contactMessage").value;
+
+    const subject =
+        encodeURIComponent(
+            "PricePadi Contact Message"
+        );
+
+    const body =
+        encodeURIComponent(
+
+`Name: ${name}
+
+WhatsApp: ${whatsapp}
+
+Message:
+${message}`
+
+        );
+
+    window.location.href =
+        `mailto:sickarchitect584@gmail.com?subject=${subject}&body=${body}`;
+
+}
+
+</script>
 
 
     </div>
