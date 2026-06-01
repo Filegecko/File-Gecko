@@ -1,0 +1,228 @@
+        [
+            { id: 1, name: "Local Market Rice (50kg Bag) - De-Stoned", price: 78000, category: "Foodstuffs", structuralType: "Local Market", state: "Lagos", location: "Daleko Market, Mushin", tag: "Staple", trending: true,
+            
+            sellable: false},
+            { id: 2, name: "Brown Beans (Oloyin Paint Bucket)", price: 4500, category: "Foodstuffs", structuralType: "Local Market", state: "Lagos", location: "Bodija Market, Ibadan", tag: "Staple", trending: true },
+            { id: 3, name: "Fresh Catfish (Per Kg Single Cut)", price: 3800, oldPrice: 5000, category: "Foodstuffs", structuralType: "Local Market", state: "Rivers", location: "Oil Mill Market, Port Harcourt", tag: "Staple", trending: false,  },
+            { id: 4, name: "Dangote Cement (50kg Single Bag)", price: 7300, category: "Building Materials", structuralType: "Local Market", state: "Abia", location: "Ariaria Int'l Market, Aba", tag: "Verified", trending: true },
+            { id: 6, name: "Jollof Rice with Fried Chicken Platter", price: 6500, category: "Foodstuffs", structuralType: "Restaurant", state: "Anambra", location: "Upper Iweka Hub, Onitsha", tag: "Food Menu", trending: false },
+            { id: 7, name: "Standard Luxury Suite Stay (Per Night)", price: 45000, category: "Building Materials", structuralType: "Hotel", state: "Abia", location: "Eket City Center Hub", tag: "Lodging", trending: false },
+{ id: 8, name: "Frozen Chicken (Whole Pack Medium Size)", price: 12500, category: "Foodstuffs", structuralType: "Local Market", state: "Oyo", location: "Aleshinloye Market, Ibadan", tag: "Protein", trending: true },
+
+{ id: 9, name: "Indomie Noodles Carton (40 Packs)", price: 13500, category: "Foodstuffs", structuralType: "Local Market", state: "Lagos", location: "Oyingbo Market, Lagos", tag: "Fast Food", trending: true },
+
+{ id: 10, name: "Fresh Tilapia Fish (Per Kg)", price: 4200, category: "Foodstuffs", structuralType: "Local Market", state: "Cross River", location: "Marina Market, Calabar", tag: "Seafood", trending: false },
+
+{ id: 11, name: "Egg Tray (30 Pieces)", price: 3200, category: "Foodstuffs", structuralType: "Local Market", state: "Kano", location: "Sabon Gari Market", tag: "Protein", trending: true },
+
+{ id: 12, name: "White Garri (Paint Bucket)", price: 2800, category: "Foodstuffs", structuralType: "Local Market", state: "Ondo", location: "Oja Oba Market, Akure", tag: "Staple", trending: false },
+
+{ id: 13, name: "Frozen Croaker Fish (Medium Size)", price: 9000, category: "Foodstuffs", structuralType: "Local Market", state: "Delta", location: "Warri Main Market", tag: "Seafood", trending: true },
+
+{ id: 14, name: "Palm Kernel Oil (5 Liter Gallon)", price: 11000, category: "Foodstuffs", structuralType: "Local Market", state: "Edo", location: "New Benin Market, Benin City", tag: "Oil", trending: false },
+
+{ id: 15, name: "Groundnut (Paint Bucket)", price: 6000, category: "Foodstuffs", structuralType: "Local Market", state: "Niger", location: "Mokwa Market", tag: "Staple", trending: false },
+
+{ id: 16, name: "Yam Flour (1 Paint Bucket)", price: 5500, category: "Foodstuffs", structuralType: "Local Market", state: "Osun", location: "Odo Ori Market, Ilesa", tag: "Staple", trending: false },
+
+{ id: 17, name: "Goat Meat (Per Kg Fresh Cut)", price: 7500, category: "Foodstuffs", structuralType: "Local Market", state: "Abuja", location: "Garki Modern Market", tag: "Protein", trending: true },
+
+{ id: 18, name: "Fresh Okra Basket", price: 3500, category: "Foodstuffs", structuralType: "Local Market", state: "Ekiti", location: "Ado-Ekiti Central Market", tag: "Vegetable", trending: false },
+
+{ id: 19, name: "Bottled Groundnut Oil (3 Liters)", price: 9800, category: "Foodstuffs", structuralType: "Local Market", state: "Lagos", location: "Mile 12 Market, Ketu", tag: "Cooking Oil", trending: true },
+
+{ id: 20, name: "Sweet Potato (Medium Sack)", price: 7200, category: "Foodstuffs", structuralType: "Local Market", state: "Plateau", location: "Jos Main Market", tag: "Staple", trending: false },
+
+{ id: 21, name: "Smoked Fish Pack (Assorted)", price: 6500, category: "Foodstuffs", structuralType: "Local Market", state: "Bayelsa", location: "Swali Market, Yenagoa", tag: "Seafood", trending: true },
+    { id: 22, name: "Indomie Instant Noodles Carton (40 packs)", price: 12500, category: "Foodstuffs", structuralType: "Supermarket", state: "Lagos", location: "Oyingbo Market, Lagos Island", tag: "Fast Food", trending: true },
+
+    { id: 23, name: "Palm Oil (25 Litres Gallon)", price: 68000, category: "Foodstuffs", structuralType: "Local Market", state: "Delta", location: "Warri Main Market, Warri", tag: "Cooking Oil", trending: true },
+
+    { id: 24, name: "Frozen Chicken (Medium Size Crate)", price: 28500, category: "Foodstuffs", structuralType: "Supermarket", state: "Lagos", location: "Alaba Int. Market, Ojo", tag: "Protein", trending: true },
+
+    { id: 25, name: "Fresh Tomatoes (Large Basket)", price: 22000, category: "Foodstuffs", structuralType: "Local Market", state: "Kaduna", location: "Kawo Market, Kaduna", tag: "Vegetable", trending: false },
+
+    { id: 26, name: "Garri Ijebu (50kg Bag)", price: 26000, category: "Foodstuffs", structuralType: "Local Market", state: "Ogun", location: "Sango Ota Market", tag: "Staple", trending: true },
+
+    { id: 27, name: "Groundnut (Paint Bucket)", price: 4200, category: "Foodstuffs", structuralType: "Local Market", state: "Niger", location: "Minna Central Market", tag: "Snack", trending: false },
+
+    { id: 28, name: "Live Broiler Chicken (Per Bird)", price: 8500, category: "Foodstuffs", structuralType: "Local Market", state: "Oyo", location: "Bodija Market, Ibadan", tag: "Protein", trending: true },
+
+    { id: 29, name: "Semovita (10kg Bag)", price: 11800, category: "Foodstuffs", structuralType: "Supermarket", state: "Lagos", location: "Shoprite Ikeja City Mall", tag: "Staple", trending: false },
+
+    { id: 30, name: "Fresh Fish (Titus Mackerel Medium)", price: 3200, category: "Foodstuffs", structuralType: "Local Market", state: "Rivers", location: "Mile 1 Market, Port Harcourt", tag: "Seafood", trending: true },
+
+    { id: 31, name: "Rice (50kg Imported Long Grain)", price: 72000, category: "Foodstuffs", structuralType: "Local Market", state: "Lagos", location: "Daleko Market, Mushin", tag: "Staple", trending: true },
+
+    { id: 32, name: "Yam Tubers (Medium Size Bundle)", price: 9500, category: "Foodstuffs", structuralType: "Local Market", state: "Benue", location: "Otukpo Market", tag: "Staple", trending: false },
+
+    { id: 33, name: "Eggs (Crate of 30)", price: 6200, category: "Foodstuffs", structuralType: "Supermarket", state: "Lagos", location: "Mile 12 Market", tag: "Protein", trending: true },
+
+    { id: 34, name: "Pepper (Fresh Rodo Basket)", price: 14500, category: "Foodstuffs", structuralType: "Local Market", state: "Oyo", location: "Oja Oba Market, Ibadan", tag: "Spice", trending: true },
+
+    { id: 35, name: "Beef (1kg Fresh Cut)", price: 7500, category: "Foodstuffs", structuralType: "Butchery", state: "Lagos", location: "Abule Egba Meat Market", tag: "Protein", trending: true },
+
+    { id: 36, name: "Cooking Gas (12.5kg Cylinder Refill)", price: 15200, category: "Utilities", structuralType: "Gas Station", state: "Abuja", location: "Garki Gas Depot", tag: "Energy", trending: true },
+
+    { id: 37, name: "Bread (Large Family Loaf)", price: 1800, category: "Foodstuffs", structuralType: "Bakery", state: "Lagos", location: "Ikeja Local Bakery Hub", tag: "Bakery", trending: false },
+
+    { id: 38, name: "Onions (50kg Bag)", price: 47000, category: "Foodstuffs", structuralType: "Local Market", state: "Sokoto", location: "Sokoto Central Market", tag: "Vegetable", trending: false },
+
+    { id: 39, name: "Rice (5kg Bag Local Parboiled)", price: 6800, category: "Foodstuffs", structuralType: "Supermarket", state: "Enugu", location: "New Market Enugu", tag: "Staple", trending: true },
+
+    { id: 40, name: "Crayfish (Small Bag)", price: 3500, category: "Foodstuffs", structuralType: "Local Market", state: "Akwa Ibom", location: "Uyo Main Market", tag: "Seafood", trending: false },
+
+    { id: 41, name: "Frozen Turkey (Whole Medium)", price: 26500, category: "Foodstuffs", structuralType: "Supermarket", state: "Lagos", location: "Festac Town Market", tag: "Protein", trending: true },
+
+    { id: 42, name: "Cement (Dangote 50kg Bag)", price: 8200, category: "Building Materials", structuralType: "Hardware", state: "Abia", location: "Aba Ariaria Market", tag: "Construction", trending: true },
+
+    { id: 43, name: "Iron Rod (12mm Standard)", price: 4800, category: "Building Materials", structuralType: "Hardware", state: "Lagos", location: "Ijora Steel Market", tag: "Construction", trending: false },
+
+    { id: 44, name: "Pure Water Sachet (Bag of 20)", price: 500, category: "Beverages", structuralType: "Local Market", state: "Lagos", location: "Mushin Wholesale Depot", tag: "Drink", trending: false },
+
+    { id: 45, name: "Soft Drink Crate (Coke/Fanta/Sprite)", price: 7200, category: "Beverages", structuralType: "Supermarket", state: "Rivers", location: "Port Harcourt Mall Depot", tag: "Drink", trending: true },
+
+    { id: 46, name: "Plantain (Large Bunch)", price: 4500, category: "Foodstuffs", structuralType: "Local Market", state: "Ondo", location: "Akure Main Market", tag: "Staple", trending: true },
+
+    { id: 47, name: "Sugar (50kg Bag)", price: 52000, category: "Foodstuffs", structuralType: "Supermarket", state: "Lagos", location: "Apapa Wholesale Market", tag: "Staple", trending: false },
+
+    { id: 48, name: "Cooking Oil (5 Litres Vegetable Oil)", price: 9200, category: "Foodstuffs", structuralType: "Supermarket", state: "Lagos", location: "Surulere Retail Hub", tag: "Cooking Oil", trending: true },
+
+    { id: 49, name: "Okra (Fresh Basket)", price: 3200, category: "Foodstuffs", structuralType: "Local Market", state: "Kano", location: "Sabon Gari Market", tag: "Vegetable", trending: false },
+
+    { id: 50, name: "Frozen Croaker Fish (Per Kg)", price: 5200, category: "Foodstuffs", structuralType: "Local Market", state: "Lagos", location: "Ajah Fish Market", tag: "Seafood", trending: true },
+
+{ id: 1, name: "Local Market Rice (50kg Bag) - Premium", price: 78000, oldPrice: 85000, category: "Foodstuffs", structuralType: "Local Market", state: "Lagos", location: "Daleko Market, Mushin", tag: "Staple", trending: true, sellable: false },
+
+{ id: 2, name: "Beans (Brown 50kg Bag)", price: 62000, oldPrice: 70000, category: "Foodstuffs", structuralType: "Local Market", state: "Lagos", location: "Oyingbo Market", tag: "Staple", trending: false, sellable: true },
+
+{ id: 3, name: "Garri Ijebu (Paint Bucket)", price: 4200, oldPrice: 5000, category: "Foodstuffs", structuralType: "Local Market", state: "Lagos", location: "Ikorodu Market", tag: "Staple", trending: false, sellable: true },
+
+{ id: 4, name: "Palm Oil (5L Gallon)", price: 13500, oldPrice: 15000, category: "Cooking", structuralType: "Local Market", state: "Lagos", location: "Mile 12 Market", tag: "Cooking", trending: true, sellable: true },
+
+{ id: 5, name: "Frozen Chicken (Full Crate)", price: 28000, oldPrice: 32000, category: "Protein", structuralType: "Local Market", state: "Lagos", location: "Oshodi Market", tag: "Protein", trending: true, sellable: true },
+
+{ id: 6, name: "Tomatoes (Basket)", price: 18000, oldPrice: 22000, category: "Vegetables", structuralType: "Local Market", state: "Lagos", location: "Mile 12 Market", tag: "Fresh", trending: false, sellable: true },
+
+{ id: 7, name: "Onions (Bag)", price: 15000, oldPrice: 18000, category: "Vegetables", structuralType: "Local Market", state: "Kano", location: "Kano Central Market", tag: "Fresh", trending: false, sellable: true },
+
+{ id: 8, name: "Yam Tubers (10 pieces)", price: 12000, oldPrice: 14000, category: "Foodstuffs", structuralType: "Local Market", state: "Lagos", location: "Ikorodu Market", tag: "Staple", trending: true, sellable: true },
+
+{ id: 9, name: "Pepper Mix (Basket)", price: 8000, oldPrice: 10000, category: "Spices", structuralType: "Local Market", state: "Lagos", location: "Oyingbo Market", tag: "Spice", trending: false, sellable: true },
+
+{ id: 10, name: "Cocoa Beans (Bag)", price: 95000, oldPrice: 110000, category: "Agriculture", structuralType: "Local Market", state: "Ondo", location: "Akure Market", tag: "Export", trending: false, sellable: false },
+
+{ id: 11, name: "Plantain (Big Bunch)", price: 6500, oldPrice: 8000, category: "Foodstuffs", structuralType: "Local Market", state: "Lagos", location: "Ajah Market", tag: "Fresh", trending: true, sellable: true },
+
+{ id: 12, name: "Cassava Flour (Gari White)", price: 3800, oldPrice: 4500, category: "Foodstuffs", structuralType: "Local Market", state: "Lagos", location: "Badagry Market", tag: "Staple", trending: false, sellable: true },
+
+{ id: 13, name: "Snail Pack (Large)", price: 12000, oldPrice: 15000, category: "Protein", structuralType: "Local Market", state: "Lagos", location: "Epe Market", tag: "Protein", trending: true, sellable: true },
+
+{ id: 14, name: "Local Rice (25kg)", price: 41000, oldPrice: 45000, category: "Foodstuffs", structuralType: "Local Market", state: "Lagos", location: "Daleko Market", tag: "Staple", trending: true, sellable: true },
+
+{ id: 15, name: "Dried Fish (Carton)", price: 22000, oldPrice: 25000, category: "Protein", structuralType: "Local Market", state: "Lagos", location: "Oyingbo Market", tag: "Protein", trending: false, sellable: true },
+{ id: 101, name: "Jollof Rice + Chicken Combo", price: 3500, oldPrice: 4000, category: "Food", structuralType: "Restaurant", state: "Lagos", location: "KFC Ikeja", tag: "Meal", trending: true, sellable: true },
+
+{ id: 102, name: "Fried Rice + Beef", price: 3200, oldPrice: 3800, category: "Food", structuralType: "Restaurant", state: "Lagos", location: "Tastee Fried Chicken", tag: "Meal", trending: false, sellable: true },
+
+{ id: 103, name: "Burger Meal Deluxe", price: 4500, oldPrice: 5000, category: "Fast Food", structuralType: "Restaurant", state: "Lagos", location: "Mr Biggs", tag: "FastFood", trending: true, sellable: true },
+
+{ id: 104, name: "Pizza Medium Size", price: 8500, oldPrice: 10000, category: "Fast Food", structuralType: "Restaurant", state: "Lagos", location: "Dominos Pizza", tag: "Pizza", trending: true, sellable: true },
+
+{ id: 105, name: "Shawarma Beef Large", price: 2500, oldPrice: 3000, category: "Fast Food", structuralType: "Restaurant", state: "Lagos", location: "The Place", tag: "Snack", trending: true, sellable: true },
+
+{ id: 106, name: "Pounded Yam + Egusi Soup", price: 4000, oldPrice: 4500, category: "Local Dish", structuralType: "Restaurant", state: "Lagos", location: "Bukka Hut", tag: "Local", trending: false, sellable: true },
+
+{ id: 107, name: "Amala + Ewedu + Gbegiri", price: 3800, oldPrice: 4200, category: "Local Dish", structuralType: "Restaurant", state: "Lagos", location: "Iya Basira", tag: "Local", trending: true, sellable: true },
+
+{ id: 108, name: "Chicken Wings (6pcs)", price: 3000, oldPrice: 3500, category: "Fast Food", structuralType: "Restaurant", state: "Lagos", location: "Chicken Republic", tag: "Snack", trending: false, sellable: true },
+
+{ id: 109, name: "Spaghetti Bolognese", price: 2800, oldPrice: 3200, category: "Food", structuralType: "Restaurant", state: "Lagos", location: "Cold Stone Cafe", tag: "Meal", trending: false, sellable: true },
+
+{ id: 110, name: "Grilled Fish + Plantain", price: 5000, oldPrice: 6000, category: "Seafood", structuralType: "Restaurant", state: "Lagos", location: "Ocean Basket", tag: "Seafood", trending: true, sellable: true },
+
+{ id: 111, name: "Pepper Soup Goat Meat", price: 3500, oldPrice: 4000, category: "Local Dish", structuralType: "Restaurant", state: "Lagos", location: "Local Chop House", tag: "Soup", trending: false, sellable: true },
+
+{ id: 112, name: "Chicken Shawarma Combo", price: 3000, oldPrice: 3500, category: "Fast Food", structuralType: "Restaurant", state: "Lagos", location: "Kilimanjaro", tag: "Snack", trending: true, sellable: true },
+
+{ id: 113, name: "Ice Cream Sundae", price: 1800, oldPrice: 2200, category: "Dessert", structuralType: "Restaurant", state: "Lagos", location: "Cold Stone", tag: "Dessert", trending: true, sellable: true },
+
+{ id: 114, name: "Chicken Burger Combo", price: 4200, oldPrice: 4800, category: "Fast Food", structuralType: "Restaurant", state: "Lagos", location: "Burger King", tag: "FastFood", trending: true, sellable: true },
+
+{ id: 115, name: "Noodles + Egg + Sausage", price: 1500, oldPrice: 1800, category: "Fast Food", structuralType: "Restaurant", state: "Lagos", location: "Local Spot", tag: "Quick Meal", trending: false, sellable: true },
+{ id: 201, name: "Standard Room (1 Night)", price: 25000, oldPrice: 30000, category: "Hotel", structuralType: "Hotel", state: "Lagos", location: "Eko Hotel", tag: "Room", trending: true, sellable: true },
+
+{ id: 202, name: "Deluxe Room (1 Night)", price: 45000, oldPrice: 50000, category: "Hotel", structuralType: "Hotel", state: "Lagos", location: "Radisson Blu", tag: "Room", trending: true, sellable: true },
+
+{ id: 203, name: "Executive Suite", price: 80000, oldPrice: 90000, category: "Hotel", structuralType: "Hotel", state: "Lagos", location: "Sheraton Lagos", tag: "Suite", trending: true, sellable: true },
+
+{ id: 204, name: "Budget Room", price: 12000, oldPrice: 15000, category: "Hotel", structuralType: "Hotel", state: "Lagos", location: "Local Inn", tag: "Budget", trending: false, sellable: true },
+
+{ id: 205, name: "Presidential Suite", price: 150000, oldPrice: 180000, category: "Hotel", structuralType: "Hotel", state: "Abuja", location: "Transcorp Hilton", tag: "Luxury", trending: true, sellable: false },
+
+{ id: 206, name: "Single Room", price: 18000, oldPrice: 20000, category: "Hotel", structuralType: "Hotel", state: "Lagos", location: "Ibis Hotel", tag: "Room", trending: false, sellable: true },
+
+{ id: 207, name: "Double Room", price: 22000, oldPrice: 25000, category: "Hotel", structuralType: "Hotel", state: "Lagos", location: "Nordic Hotel", tag: "Room", trending: false, sellable: true },
+
+{ id: 208, name: "Mini Suite", price: 60000, oldPrice: 70000, category: "Hotel", structuralType: "Hotel", state: "Lagos", location: "Oriental Hotel", tag: "Suite", trending: true, sellable: true },
+
+{ id: 209, name: "Luxury Penthouse", price: 200000, oldPrice: 230000, category: "Hotel", structuralType: "Hotel", state: "Lagos", location: "Eko Signature", tag: "Luxury", trending: true, sellable: false },
+
+{ id: 210, name: "Economy Room", price: 10000, oldPrice: 12000, category: "Hotel", structuralType: "Hotel", state: "Lagos", location: "Guest House Ikeja", tag: "Budget", trending: false, sellable: true },
+
+{ id: 211, name: "Sea View Room", price: 55000, oldPrice: 60000, category: "Hotel", structuralType: "Hotel", state: "Lagos", location: "Victoria Beach Hotel", tag: "View", trending: true, sellable: true },
+
+{ id: 212, name: "Business Suite", price: 70000, oldPrice: 80000, category: "Hotel", structuralType: "Hotel", state: "Lagos", location: "Protea Hotel", tag: "Business", trending: true, sellable: true },
+
+{ id: 213, name: "Honeymoon Suite", price: 95000, oldPrice: 110000, category: "Hotel", structuralType: "Hotel", state: "Lagos", location: "Federal Palace Hotel", tag: "Romantic", trending: true, sellable: true },
+
+{ id: 214, name: "Day Use Room (6hrs)", price: 15000, oldPrice: 18000, category: "Hotel", structuralType: "Hotel", state: "Lagos", location: "Airport Hotel", tag: "Short Stay", trending: false, sellable: true },
+
+{ id: 215, name: "VIP Lounge Room", price: 120000, oldPrice: 140000, category: "Hotel", structuralType: "Hotel", state: "Abuja", location: "Hilton VIP Wing", tag: "VIP", trending: true, sellable: false },
+{ id: 301, name: "Samsung Galaxy A15", price: 185000, oldPrice: 200000, category: "Phones", structuralType: "Electronics", state: "Lagos", location: "Slot Nigeria", tag: "Phone", trending: true, sellable: true },
+{
+    id: 21,
+    name: "Oraimo Power Bank 20000mAh",
+    price: 18500,
+    oldPrice: 25000,
+    category: "Electronics",
+    structuralType: "Electronics",
+    state: "Lagos",
+    location: "Ikeja Computer Village",
+
+    // CLEAN IMAGE
+    image: "https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?q=80&w=1200&auto=format&fit=crop",
+
+    // JUMIA PRODUCT LINK
+    link: "https://www.jumia.com.ng/catalog/?q=oraimo+20000mah+power+bank",
+
+    sellable: true
+},
+{ id: 302, name: "iPhone 13 Pro Max", price: 850000, oldPrice: 900000, category: "Phones", structuralType: "Electronics", state: "Lagos", location: "Jumia Store", tag: "Phone", trending: true, sellable: true },
+
+{ id: 303, name: "HP Laptop 15 Core i5", price: 520000, oldPrice: 580000, category: "Computers", structuralType: "Electronics", state: "Lagos", location: "HP Store Nigeria", tag: "Laptop", trending: true, sellable: true },
+
+{ id: 304, name: "Dell Inspiron 14", price: 480000, oldPrice: 530000, category: "Computers", structuralType: "Electronics", state: "Lagos", location: "Slot Nigeria", tag: "Laptop", trending: false, sellable: true },
+
+{ id: 305, name: "Samsung 55 Inch Smart TV", price: 420000, oldPrice: 470000, category: "TV", structuralType: "Electronics", state: "Lagos", location: "Jumia", tag: "TV", trending: true, sellable: true },
+
+{ id: 306, name: "LG Soundbar System", price: 120000, oldPrice: 140000, category: "Audio", structuralType: "Electronics", state: "Lagos", location: "LG Store", tag: "Audio", trending: false, sellable: true },
+
+{ id: 307, name: "Oraimo Power Bank 20000mAh", price: 25000, oldPrice: 30000, category: "Accessories", structuralType: "Electronics", state: "Lagos", location: "Jumia", tag: "Power", trending: true, sellable: true },
+
+{ id: 308, name: "Tecno Spark 20", price: 160000, oldPrice: 180000, category: "Phones", structuralType: "Electronics", state: "Lagos", location: "Tecno Store", tag: "Phone", trending: true, sellable: true },
+
+{ id: 309, name: "Apple AirPods Pro", price: 180000, oldPrice: 200000, category: "Audio", structuralType: "Electronics", state: "Lagos", location: "Apple Store", tag: "Audio", trending: true, sellable: true },
+
+{ id: 310, name: "Canon DSLR Camera", price: 350000, oldPrice: 390000, category: "Camera", structuralType: "Electronics", state: "Lagos", location: "Canon Store", tag: "Camera", trending: false, sellable: true },
+
+{ id: 311, name: "Xbox Series S", price: 320000, oldPrice: 350000, category: "Gaming", structuralType: "Electronics", state: "Lagos", location: "Game Store", tag: "Gaming", trending: true, sellable: true },
+
+{ id: 312, name: "PlayStation 5", price: 680000, oldPrice: 720000, category: "Gaming", structuralType: "Electronics", state: "Lagos", location: "Sony Store", tag: "Gaming", trending: true, sellable: true },
+
+{ id: 313, name: "Infinix Hot 40i", price: 145000, oldPrice: 160000, category: "Phones", structuralType: "Electronics", state: "Lagos", location: "Jumia", tag: "Phone", trending: true, sellable: true },
+
+{ id: 314, name: "Hisense Refrigerator", price: 280000, oldPrice: 310000, category: "Home Appliance", structuralType: "Electronics", state: "Lagos", location: "Hisense Store", tag: "Appliance", trending: false, sellable: true },
+
+{ id: 315, name: "Standing Fan Industrial", price: 45000, oldPrice: 50000, category: "Home Appliance", structuralType: "Electronics", state: "Lagos", location: "Local Market", tag: "Appliance", trending: false, sellable: true }
+]

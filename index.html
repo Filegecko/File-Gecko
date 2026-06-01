@@ -29,6 +29,20 @@
         .category-card:hover .icon-bounce {
             transform: translateY(-4px) scale(1.05);
         }
+.product-enter{
+    opacity:0;
+    transform:translateY(15px);
+    animation:productEnter .4s ease forwards;
+}
+
+@keyframes productEnter{
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
     </style>
 </head>
 <!-- PRICEPADI LOADER -->
@@ -300,26 +314,27 @@ function toggleVendorPopup(show) {
 
             <div class="relative w-full">
 
-                <input id="searchInput"
-                       type="text"
-                       placeholder="Search products, markets, accessories..."
-                       class="w-full bg-slate-100 text-sm pl-4 pr-10 py-2 rounded-full border border-transparent focus:outline-none focus:border-emerald-500 focus:bg-white transition-all">
+<input id="searchInput"
+       type="text"
+       placeholder="Search products, markets, accessories..."
+       onclick="openSearchPage()"
+       class="w-full bg-slate-100 text-sm pl-4 pr-10 py-2 rounded-full border border-transparent focus:outline-none focus:border-emerald-500 focus:bg-white transition-all">
 
-                <span class="absolute right-3 top-2.5 text-slate-400">
+<span class="absolute right-3 top-2.5 text-slate-400 pointer-events-none">
 
-                    <svg xmlns="http://www.w3.org/2000/svg"
-                         fill="none"
-                         viewBox="0 0 24 24"
-                         stroke-width="2"
-                         stroke="currentColor"
-                         class="w-4 h-4">
+    <svg xmlns="http://www.w3.org/2000/svg"
+         fill="none"
+         viewBox="0 0 24 24"
+         stroke-width="2"
+         stroke="currentColor"
+         class="w-4 h-4">
 
-                        <path stroke-linecap="round"
-                              stroke-linejoin="round"
-                              d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.603 10.603Z" />
-                    </svg>
+        <path stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.603 10.603Z" />
+    </svg>
 
-                </span>
+</span>
 
             </div>
 
@@ -398,26 +413,27 @@ function toggleVendorPopup(show) {
 
         <div class="relative w-full">
 
-            <input id="searchInputMobile"
-                   type="text"
-                   placeholder="Search products, markets, accessories..."
-                   class="w-full bg-slate-100 text-sm pl-4 pr-10 py-3 rounded-full border border-transparent focus:outline-none focus:border-emerald-500 focus:bg-white transition-all">
+<input id="searchInputMobile"
+       type="text"
+       placeholder="Search products, markets, accessories..."
+       onclick="openSearchPage()"
+       class="w-full bg-slate-100 text-sm pl-4 pr-10 py-3 rounded-full border border-transparent focus:outline-none focus:border-emerald-500 focus:bg-white transition-all">
 
-            <span class="absolute right-3 top-3 text-slate-400">
+<span class="absolute right-3 top-3 text-slate-400 pointer-events-none">
 
-                <svg xmlns="http://www.w3.org/2000/svg"
-                     fill="none"
-                     viewBox="0 0 24 24"
-                     stroke-width="2"
-                     stroke="currentColor"
-                     class="w-4 h-4">
+    <svg xmlns="http://www.w3.org/2000/svg"
+         fill="none"
+         viewBox="0 0 24 24"
+         stroke-width="2"
+         stroke="currentColor"
+         class="w-4 h-4">
 
-                    <path stroke-linecap="round"
-                          stroke-linejoin="round"
-                          d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.603 10.603Z" />
-                </svg>
+        <path stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.603 10.603Z" />
+    </svg>
 
-            </span>
+</span>
 
         </div>
 
@@ -1380,6 +1396,12 @@ startPromoAutoSlide();
                         <option value="Restaurant">Restaurant</option>
                         <option value="Hotel">Hotel</option>
                                                 <option value="Electronics">Electronics</option>
+                            <option value="Supermarket">Supermarket</option> 
+                               <option value="Gas Station">Gas Station</option>
+                                <option value="Bakery">FastFood</option>  
+                                                                     <option value="Butchery">Butchery</option>           
+                                
+                                <option value="Hardware">Hardware</option>
                     </select>
                 </div>
             </div>
@@ -1393,6 +1415,7 @@ startPromoAutoSlide();
         </div>
 
         <!-- VIEW 2: SEPARATE CATEGORIES HUB PAGE -->
+        
         <div id="categoriesPageLayout" class="view-panel hidden min-h-[60vh]">
             <div class="flex items-center justify-between border-b border-slate-200 pb-4 mb-8">
                 <div>
@@ -1401,48 +1424,17 @@ startPromoAutoSlide();
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Local Market Classification -->
-                <div onclick="selectCategoryHub('Local Market'); showQuickLoader(); addToCart(1)" class="category-card relative overflow-hidden rounded-2xl border border-slate-100 bg-emerald-900 text-white p-6 shadow-xs hover:shadow-xl transition-all duration-300 cursor-pointer flex flex-col justify-between h-44">
-                    <div class="animated-bg absolute inset-0 bg-gradient-to-br from-emerald-800 to-teal-950 opacity-90 transition-transform duration-500 ease-out"></div>
-                    <div class="relative z-10 flex justify-between items-start">
-                        <span class="icon-bounce text-4xl transition-transform duration-300">🌾</span>
-                        <span class="text-[10px] font-bold bg-white/20 px-2.5 py-1 rounded-md uppercase tracking-wider">Staples</span>
-                    </div>
-                    <div class="relative z-10">
-                        <h3 class="font-bold text-lg leading-none">Local Market</h3>
-                        <p class="text-xs text-emerald-200/90 mt-1.5">Rice, Beans, Fresh Seafood rates...</p>
-                    </div>
-                </div>
 
-                <!-- Restaurant Classification -->
-                <div onclick="selectCategoryHub('Restaurant'); showQuickLoader(); addToCart(1)" class="category-card relative overflow-hidden rounded-2xl border border-slate-100 bg-amber-900 text-white p-6 shadow-xs hover:shadow-xl transition-all duration-300 cursor-pointer flex flex-col justify-between h-44">
-                    <div class="animated-bg absolute inset-0 bg-gradient-to-br from-amber-800 to-orange-950 opacity-90 transition-transform duration-500 ease-out"></div>
-                    <div class="relative z-10 flex justify-between items-start">
-                        <span class="icon-bounce text-4xl transition-transform duration-300">🍗</span>
-                        <span class="text-[10px] font-bold bg-white/20 px-2.5 py-1 rounded-md uppercase tracking-wider">Ready Meals</span>
-                    </div>
-                    <div class="relative z-10">
-                        <h3 class="font-bold text-lg leading-none">Restaurant</h3>
-                        <p class="text-xs text-amber-200/90 mt-1.5">Platters, local cooked cuisines...</p>
-                    </div>
-                </div>
-
-                <!-- Hotel Lodging Classification -->
-                <div onclick="selectCategoryHub('Hotel'); showQuickLoader(); addToCart(1)" class="category-card relative overflow-hidden rounded-2xl border border-slate-100 bg-blue-900 text-white p-6 shadow-xs hover:shadow-xl transition-all duration-300 cursor-pointer flex flex-col justify-between h-44">
-                    <div class="animated-bg absolute inset-0 bg-gradient-to-br from-blue-800 to-indigo-950 opacity-90 transition-transform duration-500 ease-out"></div>
-                    <div class="relative z-10 flex justify-between items-start">
-                        <span class="icon-bounce text-4xl transition-transform duration-300">🏨</span>
-                        <span class="text-[10px] font-bold bg-white/20 px-2.5 py-1 rounded-md uppercase tracking-wider">Lodging</span>
-                    </div>
-                    <div class="relative z-10">
-                        <h3 class="font-bold text-lg leading-none">Hotel Suites</h3>
-                        <p class="text-xs text-blue-200/90 mt-1.5">Luxury rooms, overnight tariffs...</p>
-                    </div>
-                </div>
-            </div>
-        </div>
         <div id="homeSections"></div>
+        <div id="categoriesPage" style="display:none;">
+
+    <div id="categoryProductsArea"
+       productContainer.className =
+    "flex flex-wrap gap-3 w-full";">
+    </div>
+
+</div>
+
     </main>
 <!-- QUICK LINKS -->
 
@@ -1683,218 +1675,31 @@ ${message}`
 
 <script>
         // Core Array Source Data
-        const productDataArray = [
-            { id: 1, name: "Local Market Rice (50kg Bag) - De-Stoned", price: 78000, category: "Foodstuffs", structuralType: "Local Market", state: "Lagos", location: "Daleko Market, Mushin", tag: "Staple", trending: true,
-            sellable: false},
-            { id: 2, name: "Brown Beans (Oloyin Paint Bucket)", price: 4500, category: "Foodstuffs", structuralType: "Local Market", state: "Lagos", location: "Bodija Market, Ibadan", tag: "Staple", trending: true },
-            { id: 3, name: "Fresh Catfish (Per Kg Single Cut)", price: 3800, oldPrice: 5000, category: "Foodstuffs", structuralType: "Local Market", state: "Rivers", location: "Oil Mill Market, Port Harcourt", tag: "Staple", trending: false,  },
-            { id: 4, name: "Dangote Cement (50kg Single Bag)", price: 7300, category: "Building Materials", structuralType: "Local Market", state: "Abia", location: "Ariaria Int'l Market, Aba", tag: "Verified", trending: true },
-            { id: 6, name: "Jollof Rice with Fried Chicken Platter", price: 6500, category: "Foodstuffs", structuralType: "Restaurant", state: "Anambra", location: "Upper Iweka Hub, Onitsha", tag: "Food Menu", trending: false },
-            { id: 7, name: "Standard Luxury Suite Stay (Per Night)", price: 45000, category: "Building Materials", structuralType: "Hotel", state: "Abia", location: "Eket City Center Hub", tag: "Lodging", trending: false },
-{ id: 8, name: "Frozen Chicken (Whole Pack Medium Size)", price: 12500, category: "Foodstuffs", structuralType: "Local Market", state: "Oyo", location: "Aleshinloye Market, Ibadan", tag: "Protein", trending: true },
+let productDataArray = [];
 
-{ id: 9, name: "Indomie Noodles Carton (40 Packs)", price: 13500, category: "Foodstuffs", structuralType: "Local Market", state: "Lagos", location: "Oyingbo Market, Lagos", tag: "Fast Food", trending: true },
+async function loadProducts() {
 
-{ id: 10, name: "Fresh Tilapia Fish (Per Kg)", price: 4200, category: "Foodstuffs", structuralType: "Local Market", state: "Cross River", location: "Marina Market, Calabar", tag: "Seafood", trending: false },
+    try {
 
-{ id: 11, name: "Egg Tray (30 Pieces)", price: 3200, category: "Foodstuffs", structuralType: "Local Market", state: "Kano", location: "Sabon Gari Market", tag: "Protein", trending: true },
+        const response = await fetch("products.json");
 
-{ id: 12, name: "White Garri (Paint Bucket)", price: 2800, category: "Foodstuffs", structuralType: "Local Market", state: "Ondo", location: "Oja Oba Market, Akure", tag: "Staple", trending: false },
+        productDataArray = await response.json();
 
-{ id: 13, name: "Frozen Croaker Fish (Medium Size)", price: 9000, category: "Foodstuffs", structuralType: "Local Market", state: "Delta", location: "Warri Main Market", tag: "Seafood", trending: true },
+        renderHomeSections();
 
-{ id: 14, name: "Palm Kernel Oil (5 Liter Gallon)", price: 11000, category: "Foodstuffs", structuralType: "Local Market", state: "Edo", location: "New Benin Market, Benin City", tag: "Oil", trending: false },
+        if (window.currentCategoryHub) {
+            renderCategoryProducts(window.currentCategoryHub);
+        }
 
-{ id: 15, name: "Groundnut (Paint Bucket)", price: 6000, category: "Foodstuffs", structuralType: "Local Market", state: "Niger", location: "Mokwa Market", tag: "Staple", trending: false },
+    } catch (error) {
 
-{ id: 16, name: "Yam Flour (1 Paint Bucket)", price: 5500, category: "Foodstuffs", structuralType: "Local Market", state: "Osun", location: "Odo Ori Market, Ilesa", tag: "Staple", trending: false },
+        console.error("Products failed to load", error);
 
-{ id: 17, name: "Goat Meat (Per Kg Fresh Cut)", price: 7500, category: "Foodstuffs", structuralType: "Local Market", state: "Abuja", location: "Garki Modern Market", tag: "Protein", trending: true },
+    }
 
-{ id: 18, name: "Fresh Okra Basket", price: 3500, category: "Foodstuffs", structuralType: "Local Market", state: "Ekiti", location: "Ado-Ekiti Central Market", tag: "Vegetable", trending: false },
+}
 
-{ id: 19, name: "Bottled Groundnut Oil (3 Liters)", price: 9800, category: "Foodstuffs", structuralType: "Local Market", state: "Lagos", location: "Mile 12 Market, Ketu", tag: "Cooking Oil", trending: true },
-
-{ id: 20, name: "Sweet Potato (Medium Sack)", price: 7200, category: "Foodstuffs", structuralType: "Local Market", state: "Plateau", location: "Jos Main Market", tag: "Staple", trending: false },
-
-{ id: 21, name: "Smoked Fish Pack (Assorted)", price: 6500, category: "Foodstuffs", structuralType: "Local Market", state: "Bayelsa", location: "Swali Market, Yenagoa", tag: "Seafood", trending: true },
-    { id: 22, name: "Indomie Instant Noodles Carton (40 packs)", price: 12500, category: "Foodstuffs", structuralType: "Supermarket", state: "Lagos", location: "Oyingbo Market, Lagos Island", tag: "Fast Food", trending: true },
-
-    { id: 23, name: "Palm Oil (25 Litres Gallon)", price: 68000, category: "Foodstuffs", structuralType: "Local Market", state: "Delta", location: "Warri Main Market, Warri", tag: "Cooking Oil", trending: true },
-
-    { id: 24, name: "Frozen Chicken (Medium Size Crate)", price: 28500, category: "Foodstuffs", structuralType: "Supermarket", state: "Lagos", location: "Alaba International Market, Ojo", tag: "Protein", trending: true },
-
-    { id: 25, name: "Fresh Tomatoes (Large Basket)", price: 22000, category: "Foodstuffs", structuralType: "Local Market", state: "Kaduna", location: "Kawo Market, Kaduna", tag: "Vegetable", trending: false },
-
-    { id: 26, name: "Garri Ijebu (50kg Bag)", price: 26000, category: "Foodstuffs", structuralType: "Local Market", state: "Ogun", location: "Sango Ota Market", tag: "Staple", trending: true },
-
-    { id: 27, name: "Groundnut (Paint Bucket)", price: 4200, category: "Foodstuffs", structuralType: "Local Market", state: "Niger", location: "Minna Central Market", tag: "Snack", trending: false },
-
-    { id: 28, name: "Live Broiler Chicken (Per Bird)", price: 8500, category: "Foodstuffs", structuralType: "Local Market", state: "Oyo", location: "Bodija Market, Ibadan", tag: "Protein", trending: true },
-
-    { id: 29, name: "Semovita (10kg Bag)", price: 11800, category: "Foodstuffs", structuralType: "Supermarket", state: "Lagos", location: "Shoprite Ikeja City Mall", tag: "Staple", trending: false },
-
-    { id: 30, name: "Fresh Fish (Titus Mackerel Medium)", price: 3200, category: "Foodstuffs", structuralType: "Local Market", state: "Rivers", location: "Mile 1 Market, Port Harcourt", tag: "Seafood", trending: true },
-
-    { id: 31, name: "Rice (50kg Imported Long Grain)", price: 72000, category: "Foodstuffs", structuralType: "Local Market", state: "Lagos", location: "Daleko Market, Mushin", tag: "Staple", trending: true },
-
-    { id: 32, name: "Yam Tubers (Medium Size Bundle)", price: 9500, category: "Foodstuffs", structuralType: "Local Market", state: "Benue", location: "Otukpo Market", tag: "Staple", trending: false },
-
-    { id: 33, name: "Eggs (Crate of 30)", price: 6200, category: "Foodstuffs", structuralType: "Supermarket", state: "Lagos", location: "Mile 12 Market", tag: "Protein", trending: true },
-
-    { id: 34, name: "Pepper (Fresh Rodo Basket)", price: 14500, category: "Foodstuffs", structuralType: "Local Market", state: "Oyo", location: "Oja Oba Market, Ibadan", tag: "Spice", trending: true },
-
-    { id: 35, name: "Beef (1kg Fresh Cut)", price: 7500, category: "Foodstuffs", structuralType: "Butchery", state: "Lagos", location: "Abule Egba Meat Market", tag: "Protein", trending: true },
-
-    { id: 36, name: "Cooking Gas (12.5kg Cylinder Refill)", price: 15200, category: "Utilities", structuralType: "Gas Station", state: "Abuja", location: "Garki Gas Depot", tag: "Energy", trending: true },
-
-    { id: 37, name: "Bread (Large Family Loaf)", price: 1800, category: "Foodstuffs", structuralType: "Bakery", state: "Lagos", location: "Ikeja Local Bakery Hub", tag: "Bakery", trending: false },
-
-    { id: 38, name: "Onions (50kg Bag)", price: 47000, category: "Foodstuffs", structuralType: "Local Market", state: "Sokoto", location: "Sokoto Central Market", tag: "Vegetable", trending: false },
-
-    { id: 39, name: "Rice (5kg Bag Local Parboiled)", price: 6800, category: "Foodstuffs", structuralType: "Supermarket", state: "Enugu", location: "New Market Enugu", tag: "Staple", trending: true },
-
-    { id: 40, name: "Crayfish (Small Bag)", price: 3500, category: "Foodstuffs", structuralType: "Local Market", state: "Akwa Ibom", location: "Uyo Main Market", tag: "Seafood", trending: false },
-
-    { id: 41, name: "Frozen Turkey (Whole Medium)", price: 26500, category: "Foodstuffs", structuralType: "Supermarket", state: "Lagos", location: "Festac Town Market", tag: "Protein", trending: true },
-
-    { id: 42, name: "Cement (Dangote 50kg Bag)", price: 8200, category: "Building Materials", structuralType: "Hardware", state: "Abia", location: "Aba Ariaria Market", tag: "Construction", trending: true },
-
-    { id: 43, name: "Iron Rod (12mm Standard)", price: 4800, category: "Building Materials", structuralType: "Hardware", state: "Lagos", location: "Ijora Steel Market", tag: "Construction", trending: false },
-
-    { id: 44, name: "Pure Water Sachet (Bag of 20)", price: 500, category: "Beverages", structuralType: "Local Market", state: "Lagos", location: "Mushin Wholesale Depot", tag: "Drink", trending: false },
-
-    { id: 45, name: "Soft Drink Crate (Coke/Fanta/Sprite)", price: 7200, category: "Beverages", structuralType: "Supermarket", state: "Rivers", location: "Port Harcourt Mall Depot", tag: "Drink", trending: true },
-
-    { id: 46, name: "Plantain (Large Bunch)", price: 4500, category: "Foodstuffs", structuralType: "Local Market", state: "Ondo", location: "Akure Main Market", tag: "Staple", trending: true },
-
-    { id: 47, name: "Sugar (50kg Bag)", price: 52000, category: "Foodstuffs", structuralType: "Supermarket", state: "Lagos", location: "Apapa Wholesale Market", tag: "Staple", trending: false },
-
-    { id: 48, name: "Cooking Oil (5 Litres Vegetable Oil)", price: 9200, category: "Foodstuffs", structuralType: "Supermarket", state: "Lagos", location: "Surulere Retail Hub", tag: "Cooking Oil", trending: true },
-
-    { id: 49, name: "Okra (Fresh Basket)", price: 3200, category: "Foodstuffs", structuralType: "Local Market", state: "Kano", location: "Sabon Gari Market", tag: "Vegetable", trending: false },
-
-    { id: 50, name: "Frozen Croaker Fish (Per Kg)", price: 5200, category: "Foodstuffs", structuralType: "Local Market", state: "Lagos", location: "Ajah Fish Market", tag: "Seafood", trending: true },
-
-{ id: 1, name: "Local Market Rice (50kg Bag) - Premium", price: 78000, oldPrice: 85000, category: "Foodstuffs", structuralType: "Local Market", state: "Lagos", location: "Daleko Market, Mushin", tag: "Staple", trending: true, sellable: false },
-
-{ id: 2, name: "Beans (Brown 50kg Bag)", price: 62000, oldPrice: 70000, category: "Foodstuffs", structuralType: "Local Market", state: "Lagos", location: "Oyingbo Market", tag: "Staple", trending: false, sellable: true },
-
-{ id: 3, name: "Garri Ijebu (Paint Bucket)", price: 4200, oldPrice: 5000, category: "Foodstuffs", structuralType: "Local Market", state: "Lagos", location: "Ikorodu Market", tag: "Staple", trending: false, sellable: true },
-
-{ id: 4, name: "Palm Oil (5L Gallon)", price: 13500, oldPrice: 15000, category: "Cooking", structuralType: "Local Market", state: "Lagos", location: "Mile 12 Market", tag: "Cooking", trending: true, sellable: true },
-
-{ id: 5, name: "Frozen Chicken (Full Crate)", price: 28000, oldPrice: 32000, category: "Protein", structuralType: "Local Market", state: "Lagos", location: "Oshodi Market", tag: "Protein", trending: true, sellable: true },
-
-{ id: 6, name: "Tomatoes (Basket)", price: 18000, oldPrice: 22000, category: "Vegetables", structuralType: "Local Market", state: "Lagos", location: "Mile 12 Market", tag: "Fresh", trending: false, sellable: true },
-
-{ id: 7, name: "Onions (Bag)", price: 15000, oldPrice: 18000, category: "Vegetables", structuralType: "Local Market", state: "Kano", location: "Kano Central Market", tag: "Fresh", trending: false, sellable: true },
-
-{ id: 8, name: "Yam Tubers (10 pieces)", price: 12000, oldPrice: 14000, category: "Foodstuffs", structuralType: "Local Market", state: "Lagos", location: "Ikorodu Market", tag: "Staple", trending: true, sellable: true },
-
-{ id: 9, name: "Pepper Mix (Basket)", price: 8000, oldPrice: 10000, category: "Spices", structuralType: "Local Market", state: "Lagos", location: "Oyingbo Market", tag: "Spice", trending: false, sellable: true },
-
-{ id: 10, name: "Cocoa Beans (Bag)", price: 95000, oldPrice: 110000, category: "Agriculture", structuralType: "Local Market", state: "Ondo", location: "Akure Market", tag: "Export", trending: false, sellable: false },
-
-{ id: 11, name: "Plantain (Big Bunch)", price: 6500, oldPrice: 8000, category: "Foodstuffs", structuralType: "Local Market", state: "Lagos", location: "Ajah Market", tag: "Fresh", trending: true, sellable: true },
-
-{ id: 12, name: "Cassava Flour (Gari White)", price: 3800, oldPrice: 4500, category: "Foodstuffs", structuralType: "Local Market", state: "Lagos", location: "Badagry Market", tag: "Staple", trending: false, sellable: true },
-
-{ id: 13, name: "Snail Pack (Large)", price: 12000, oldPrice: 15000, category: "Protein", structuralType: "Local Market", state: "Lagos", location: "Epe Market", tag: "Protein", trending: true, sellable: true },
-
-{ id: 14, name: "Local Rice (25kg)", price: 41000, oldPrice: 45000, category: "Foodstuffs", structuralType: "Local Market", state: "Lagos", location: "Daleko Market", tag: "Staple", trending: true, sellable: true },
-
-{ id: 15, name: "Dried Fish (Carton)", price: 22000, oldPrice: 25000, category: "Protein", structuralType: "Local Market", state: "Lagos", location: "Oyingbo Market", tag: "Protein", trending: false, sellable: true },
-{ id: 101, name: "Jollof Rice + Chicken Combo", price: 3500, oldPrice: 4000, category: "Food", structuralType: "Restaurant", state: "Lagos", location: "KFC Ikeja", tag: "Meal", trending: true, sellable: true },
-
-{ id: 102, name: "Fried Rice + Beef", price: 3200, oldPrice: 3800, category: "Food", structuralType: "Restaurant", state: "Lagos", location: "Tastee Fried Chicken", tag: "Meal", trending: false, sellable: true },
-
-{ id: 103, name: "Burger Meal Deluxe", price: 4500, oldPrice: 5000, category: "Fast Food", structuralType: "Restaurant", state: "Lagos", location: "Mr Biggs", tag: "FastFood", trending: true, sellable: true },
-
-{ id: 104, name: "Pizza Medium Size", price: 8500, oldPrice: 10000, category: "Fast Food", structuralType: "Restaurant", state: "Lagos", location: "Dominos Pizza", tag: "Pizza", trending: true, sellable: true },
-
-{ id: 105, name: "Shawarma Beef Large", price: 2500, oldPrice: 3000, category: "Fast Food", structuralType: "Restaurant", state: "Lagos", location: "The Place", tag: "Snack", trending: true, sellable: true },
-
-{ id: 106, name: "Pounded Yam + Egusi Soup", price: 4000, oldPrice: 4500, category: "Local Dish", structuralType: "Restaurant", state: "Lagos", location: "Bukka Hut", tag: "Local", trending: false, sellable: true },
-
-{ id: 107, name: "Amala + Ewedu + Gbegiri", price: 3800, oldPrice: 4200, category: "Local Dish", structuralType: "Restaurant", state: "Lagos", location: "Iya Basira", tag: "Local", trending: true, sellable: true },
-
-{ id: 108, name: "Chicken Wings (6pcs)", price: 3000, oldPrice: 3500, category: "Fast Food", structuralType: "Restaurant", state: "Lagos", location: "Chicken Republic", tag: "Snack", trending: false, sellable: true },
-
-{ id: 109, name: "Spaghetti Bolognese", price: 2800, oldPrice: 3200, category: "Food", structuralType: "Restaurant", state: "Lagos", location: "Cold Stone Cafe", tag: "Meal", trending: false, sellable: true },
-
-{ id: 110, name: "Grilled Fish + Plantain", price: 5000, oldPrice: 6000, category: "Seafood", structuralType: "Restaurant", state: "Lagos", location: "Ocean Basket", tag: "Seafood", trending: true, sellable: true },
-
-{ id: 111, name: "Pepper Soup Goat Meat", price: 3500, oldPrice: 4000, category: "Local Dish", structuralType: "Restaurant", state: "Lagos", location: "Local Chop House", tag: "Soup", trending: false, sellable: true },
-
-{ id: 112, name: "Chicken Shawarma Combo", price: 3000, oldPrice: 3500, category: "Fast Food", structuralType: "Restaurant", state: "Lagos", location: "Kilimanjaro", tag: "Snack", trending: true, sellable: true },
-
-{ id: 113, name: "Ice Cream Sundae", price: 1800, oldPrice: 2200, category: "Dessert", structuralType: "Restaurant", state: "Lagos", location: "Cold Stone", tag: "Dessert", trending: true, sellable: true },
-
-{ id: 114, name: "Chicken Burger Combo", price: 4200, oldPrice: 4800, category: "Fast Food", structuralType: "Restaurant", state: "Lagos", location: "Burger King", tag: "FastFood", trending: true, sellable: true },
-
-{ id: 115, name: "Noodles + Egg + Sausage", price: 1500, oldPrice: 1800, category: "Fast Food", structuralType: "Restaurant", state: "Lagos", location: "Local Spot", tag: "Quick Meal", trending: false, sellable: true },
-{ id: 201, name: "Standard Room (1 Night)", price: 25000, oldPrice: 30000, category: "Hotel", structuralType: "Hotel", state: "Lagos", location: "Eko Hotel", tag: "Room", trending: true, sellable: true },
-
-{ id: 202, name: "Deluxe Room (1 Night)", price: 45000, oldPrice: 50000, category: "Hotel", structuralType: "Hotel", state: "Lagos", location: "Radisson Blu", tag: "Room", trending: true, sellable: true },
-
-{ id: 203, name: "Executive Suite", price: 80000, oldPrice: 90000, category: "Hotel", structuralType: "Hotel", state: "Lagos", location: "Sheraton Lagos", tag: "Suite", trending: true, sellable: true },
-
-{ id: 204, name: "Budget Room", price: 12000, oldPrice: 15000, category: "Hotel", structuralType: "Hotel", state: "Lagos", location: "Local Inn", tag: "Budget", trending: false, sellable: true },
-
-{ id: 205, name: "Presidential Suite", price: 150000, oldPrice: 180000, category: "Hotel", structuralType: "Hotel", state: "Abuja", location: "Transcorp Hilton", tag: "Luxury", trending: true, sellable: false },
-
-{ id: 206, name: "Single Room", price: 18000, oldPrice: 20000, category: "Hotel", structuralType: "Hotel", state: "Lagos", location: "Ibis Hotel", tag: "Room", trending: false, sellable: true },
-
-{ id: 207, name: "Double Room", price: 22000, oldPrice: 25000, category: "Hotel", structuralType: "Hotel", state: "Lagos", location: "Nordic Hotel", tag: "Room", trending: false, sellable: true },
-
-{ id: 208, name: "Mini Suite", price: 60000, oldPrice: 70000, category: "Hotel", structuralType: "Hotel", state: "Lagos", location: "Oriental Hotel", tag: "Suite", trending: true, sellable: true },
-
-{ id: 209, name: "Luxury Penthouse", price: 200000, oldPrice: 230000, category: "Hotel", structuralType: "Hotel", state: "Lagos", location: "Eko Signature", tag: "Luxury", trending: true, sellable: false },
-
-{ id: 210, name: "Economy Room", price: 10000, oldPrice: 12000, category: "Hotel", structuralType: "Hotel", state: "Lagos", location: "Guest House Ikeja", tag: "Budget", trending: false, sellable: true },
-
-{ id: 211, name: "Sea View Room", price: 55000, oldPrice: 60000, category: "Hotel", structuralType: "Hotel", state: "Lagos", location: "Victoria Beach Hotel", tag: "View", trending: true, sellable: true },
-
-{ id: 212, name: "Business Suite", price: 70000, oldPrice: 80000, category: "Hotel", structuralType: "Hotel", state: "Lagos", location: "Protea Hotel", tag: "Business", trending: true, sellable: true },
-
-{ id: 213, name: "Honeymoon Suite", price: 95000, oldPrice: 110000, category: "Hotel", structuralType: "Hotel", state: "Lagos", location: "Federal Palace Hotel", tag: "Romantic", trending: true, sellable: true },
-
-{ id: 214, name: "Day Use Room (6hrs)", price: 15000, oldPrice: 18000, category: "Hotel", structuralType: "Hotel", state: "Lagos", location: "Airport Hotel", tag: "Short Stay", trending: false, sellable: true },
-
-{ id: 215, name: "VIP Lounge Room", price: 120000, oldPrice: 140000, category: "Hotel", structuralType: "Hotel", state: "Abuja", location: "Hilton VIP Wing", tag: "VIP", trending: true, sellable: false },
-{ id: 301, name: "Samsung Galaxy A15", price: 185000, oldPrice: 200000, category: "Phones", structuralType: "Electronics", state: "Lagos", location: "Slot Nigeria", tag: "Phone", trending: true, sellable: true },
-
-{ id: 302, name: "iPhone 13 Pro Max", price: 850000, oldPrice: 900000, category: "Phones", structuralType: "Electronics", state: "Lagos", location: "Jumia Store", tag: "Phone", trending: true, sellable: true },
-
-{ id: 303, name: "HP Laptop 15 Core i5", price: 520000, oldPrice: 580000, category: "Computers", structuralType: "Electronics", state: "Lagos", location: "HP Store Nigeria", tag: "Laptop", trending: true, sellable: true },
-
-{ id: 304, name: "Dell Inspiron 14", price: 480000, oldPrice: 530000, category: "Computers", structuralType: "Electronics", state: "Lagos", location: "Slot Nigeria", tag: "Laptop", trending: false, sellable: true },
-
-{ id: 305, name: "Samsung 55 Inch Smart TV", price: 420000, oldPrice: 470000, category: "TV", structuralType: "Electronics", state: "Lagos", location: "Jumia", tag: "TV", trending: true, sellable: true },
-
-{ id: 306, name: "LG Soundbar System", price: 120000, oldPrice: 140000, category: "Audio", structuralType: "Electronics", state: "Lagos", location: "LG Store", tag: "Audio", trending: false, sellable: true },
-
-{ id: 307, name: "Oraimo Power Bank 20000mAh", price: 25000, oldPrice: 30000, category: "Accessories", structuralType: "Electronics", state: "Lagos", location: "Jumia", tag: "Power", trending: true, sellable: true },
-
-{ id: 308, name: "Tecno Spark 20", price: 160000, oldPrice: 180000, category: "Phones", structuralType: "Electronics", state: "Lagos", location: "Tecno Store", tag: "Phone", trending: true, sellable: true },
-
-{ id: 309, name: "Apple AirPods Pro", price: 180000, oldPrice: 200000, category: "Audio", structuralType: "Electronics", state: "Lagos", location: "Apple Store", tag: "Audio", trending: true, sellable: true },
-
-{ id: 310, name: "Canon DSLR Camera", price: 350000, oldPrice: 390000, category: "Camera", structuralType: "Electronics", state: "Lagos", location: "Canon Store", tag: "Camera", trending: false, sellable: true },
-
-{ id: 311, name: "Xbox Series S", price: 320000, oldPrice: 350000, category: "Gaming", structuralType: "Electronics", state: "Lagos", location: "Game Store", tag: "Gaming", trending: true, sellable: true },
-
-{ id: 312, name: "PlayStation 5", price: 680000, oldPrice: 720000, category: "Gaming", structuralType: "Electronics", state: "Lagos", location: "Sony Store", tag: "Gaming", trending: true, sellable: true },
-
-{ id: 313, name: "Infinix Hot 40i", price: 145000, oldPrice: 160000, category: "Phones", structuralType: "Electronics", state: "Lagos", location: "Jumia", tag: "Phone", trending: true, sellable: true },
-
-{ id: 314, name: "Hisense Refrigerator", price: 280000, oldPrice: 310000, category: "Home Appliance", structuralType: "Electronics", state: "Lagos", location: "Hisense Store", tag: "Appliance", trending: false, sellable: true },
-
-{ id: 315, name: "Standing Fan Industrial", price: 45000, oldPrice: 50000, category: "Home Appliance", structuralType: "Electronics", state: "Lagos", location: "Local Market", tag: "Appliance", trending: false, sellable: true }
-];
-        
-
+loadProducts();
         // Global Cart Memory Object Engine
         let cartMemory = {};
         let isSidebarCurrentlyOpen = false;
@@ -2031,123 +1836,288 @@ ${message}`
             renderCategoryProducts(hub);
         }
 
-        function renderCategoryProducts(hub) {
-            const productContainer = document.getElementById("categoryProductsArea");
-            if (!productContainer) return;
+function renderCategoryProducts(hub) {
 
-            const searchTerm = document.getElementById("categorySearchInput")?.value.toLowerCase() || "";
-            const priceSort = document.getElementById("priceSortFilter")?.value || "recommended";
+    const productContainer =
+        document.getElementById("categoryProductsArea");
 
-            let filteredProducts = productDataArray.filter(product => {
-                return (
-                    product.structuralType === hub &&
-                    (product.name.toLowerCase().includes(searchTerm) || product.location.toLowerCase().includes(searchTerm))
-                );
-            });
+    if (!productContainer) return;
 
-            if (priceSort === "high") {
-                filteredProducts.sort((a, b) => b.price - a.price);
-            } else if (priceSort === "low") {
-                filteredProducts.sort((a, b) => a.price - b.price);
-            }
+    /* FORCE VERTICAL LAYOUT */
+    productContainer.className =
+    "grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3 w-full";
 
-            if (filteredProducts.length === 0) {
-                productContainer.innerHTML = `
-                    <div class="col-span-full text-center py-12">
-                        <h3 class="font-bold text-slate-700 mb-2">No products found</h3>
-                        <p class="text-sm text-slate-500">Try another keyword</p>
-                    </div>
-                `;
-                return;
-            }
+    /* SEARCH */
+    const searchTerm =
+        document.getElementById("categorySearchInput")
+        ?.value.toLowerCase() || "";
 
-            productContainer.innerHTML = filteredProducts.map(product => {
-                const quantity = cartMemory[product.id]?.quantity || 0;
-                return `
-                    <div class="bg-white border border-slate-100 rounded-2xl p-4 shadow-xs hover:shadow-md transition-all duration-200 flex flex-col justify-between group">
-                        <div>
-                            <div class="bg-slate-100 aspect-square w-full rounded-xl mb-4 flex items-center justify-center relative overflow-hidden">
-                                <div class="flex flex-col items-center justify-center w-full h-full text-slate-400/70 p-4 border border-dashed border-slate-200 rounded-xl">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.2" stroke="currentColor" class="w-12 h-12 text-slate-300 mb-1">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Z" />
-                                    </svg>
-                                </div>
-                                <span class="absolute top-2 left-2 text-[9px] font-bold uppercase ${product.trending ? 'bg-amber-500 text-white animate-pulse' : 'bg-slate-900 text-white'} px-2 py-0.5 rounded-md">
-                                    ${product.trending ? '🔥 Trending' : product.tag}
-                                </span>
-                                <span class="absolute top-2 right-2 text-[9px] font-bold bg-emerald-600 text-white px-1.5 py-0.5 rounded-md shadow-xs">
-                                    ${product.state}
-                                </span>
-                            </div>
-                            <div class="flex items-center gap-1.5">
-                                <span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md">
-                                    ${product.category}
-                                </span>
-                                <span class="text-[10px] font-medium text-slate-500 bg-slate-100 px-1.5 py-0.5 rounded-md">
-                                    ${product.structuralType}
-                                </span>
-                            </div>
-                            <h3 class="font-bold text-slate-800 mt-2 group-hover:text-emerald-600 transition-colors text-sm leading-tight">
-                                ${product.name}
-                            </h3>
-                        </div>
-<div class="mt-2">
+    /* SORT */
+    const priceSort =
+        document.getElementById("priceSortFilter")
+        ?.value || "recommended";
 
-    ${(product.oldPrice && Number(product.oldPrice) > Number(product.price)) ? `
+    /* FILTER PRODUCTS */
+    let filteredProducts =
+        productDataArray.filter(product => {
 
-        <div class="flex items-center gap-2">
+            return (
 
-            <span class="text-[10px] text-slate-400 line-through decoration-dashed">
-                ₦${Number(product.oldPrice).toLocaleString()}
+                product.structuralType === hub &&
+
+                (
+                    product.name.toLowerCase().includes(searchTerm)
+                    ||
+                    product.location.toLowerCase().includes(searchTerm)
+                    ||
+                    product.category.toLowerCase().includes(searchTerm)
+                    ||
+                    product.state.toLowerCase().includes(searchTerm)
+                )
+
+            );
+
+        });
+
+    /* SORTING */
+    if (priceSort === "high") {
+
+        filteredProducts.sort((a, b) => b.price - a.price);
+
+    } else if (priceSort === "low") {
+
+        filteredProducts.sort((a, b) => a.price - b.price);
+
+    }
+
+    /* EMPTY STATE */
+    if (filteredProducts.length === 0) {
+
+        productContainer.innerHTML = `
+
+            <div class="text-center py-12">
+
+                <h3 class="font-bold text-slate-700 mb-2">
+
+                    No products found
+
+                </h3>
+
+                <p class="text-sm text-slate-500">
+
+                    Try another keyword
+
+                </p>
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+    /* RENDER PRODUCTS */
+    
+productContainer.innerHTML =
+        filteredProducts.map(product => {
+        const quantity =
+            cartMemory[product.id]?.quantity || 0;
+
+        const isDiscount =
+            Number(product.oldPrice) >
+            Number(product.price);
+
+        return `
+
+<a href="${product.link || '#'}"
+   target="_blank"
+   class="block w-full">
+
+<div <div class="product-enter w-full bg-white border border-slate-100 rounded-2xl p-3 shadow-sm hover:shadow-md transition-all duration-300 flex gap-3 items-start">
+
+    <!-- IMAGE -->
+    <div class="w-28 h-28 rounded-xl overflow-hidden bg-slate-100 shrink-0 flex items-center justify-center relative">
+
+        <img
+            src="${product.image}"
+            alt="${product.name}"
+            class="w-full h-full object-contain scale-110"
+            loading="lazy"
+            referrerpolicy="no-referrer"
+            onerror="this.onerror=null;this.src='https://via.placeholder.com/400x400?text=No+Image';">
+
+        <span class="absolute top-2 left-2 text-[9px] font-bold uppercase ${product.trending ? 'bg-amber-500 text-white animate-pulse' : 'bg-slate-900 text-white'} px-2 py-0.5 rounded-md">
+
+            ${product.trending ? '🔥 Trending' : product.tag}
+
+        </span>
+
+    </div>
+
+    <!-- DETAILS -->
+    <div class="flex-1 min-w-0 flex flex-col justify-between">
+
+        <!-- CATEGORY -->
+        <div class="flex items-center gap-1.5 flex-wrap">
+
+            <span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md">
+
+                ${product.category}
+
             </span>
 
-            <span class="text-[9px] bg-rose-100 text-rose-600 px-1.5 py-0.5 rounded">
-                -${Math.round(((product.oldPrice - product.price) / product.oldPrice) * 100)}%
+            <span class="text-[10px] font-medium text-slate-500 bg-slate-100 px-1.5 py-0.5 rounded-md">
+
+                ${product.structuralType}
+
+            </span>
+
+            <span class="text-[10px] font-bold bg-emerald-600 text-white px-1.5 py-0.5 rounded-md">
+
+                ${product.state}
+
             </span>
 
         </div>
 
-    ` : ``}
+        <!-- PRODUCT NAME -->
+        <h3 class="font-bold text-slate-800 mt-2 text-sm leading-tight line-clamp-2">
 
-    <div class="text-lg font-bold text-emerald-600">
-        ₦${Number(product.price).toLocaleString()}
+            ${product.name}
+
+        </h3>
+
+        <!-- LOCATION -->
+        <div class="text-[11px] text-slate-500 mt-1 truncate">
+
+            ${product.location}
+
+        </div>
+
+        <!-- PRICE -->
+        <div class="mt-2">
+
+            ${isDiscount ? `
+
+                <div class="flex items-center gap-2">
+
+                    <span class="text-[10px] text-slate-400 line-through decoration-dashed">
+
+                        ₦${Number(product.oldPrice).toLocaleString()}
+
+                    </span>
+
+                    <span class="text-[9px] bg-rose-100 text-rose-600 px-1.5 py-0.5 rounded">
+
+                        -${Math.round(((product.oldPrice - product.price) / product.oldPrice) * 100)}%
+
+                    </span>
+
+                </div>
+
+            ` : ``}
+
+            <div class="text-lg font-bold text-emerald-600">
+
+                ₦${Number(product.price).toLocaleString()}
+
+            </div>
+
+        </div>
+
+        <!-- BUTTON -->
+        <div class="mt-3">
+
+            ${product.sellable === false ? `
+
+                <div class="w-full bg-slate-100 text-slate-400 text-xs font-bold py-2.5 px-3 rounded-xl text-center">
+
+                    View Only
+
+                </div>
+
+            ` : quantity === 0 ? `
+
+                <button
+                    onclick="event.preventDefault(); updateItemQuantity(${product.id}, 1); renderCategoryProducts('${hub}');"
+                    class="w-full bg-slate-900 hover:bg-emerald-600 text-white text-xs font-bold py-2.5 px-3 rounded-xl transition-all">
+
+                    Add to Cart
+
+                </button>
+
+            ` : `
+
+                <div class="flex items-center justify-between w-full bg-slate-100 rounded-xl p-1 border border-slate-200/50">
+
+                    <button
+                        onclick="event.preventDefault(); updateItemQuantity(${product.id}, -1); renderCategoryProducts('${hub}');"
+                        class="w-8 h-8 rounded-lg bg-white font-bold text-slate-700 flex items-center justify-center">
+
+                        -
+
+                    </button>
+
+                    <span class="text-xs font-bold text-slate-900">
+
+                        ${quantity}
+
+                    </span>
+
+                    <button
+                        onclick="event.preventDefault(); updateItemQuantity(${product.id}, 1); renderCategoryProducts('${hub}');"
+                        class="w-8 h-8 rounded-lg bg-white font-bold text-slate-700 flex items-center justify-center">
+
+                        +
+
+                    </button>
+
+                </div>
+
+            `}
+
+        </div>
+
     </div>
 
 </div>
-                            <div class="flex items-center gap-1 text-slate-500 text-[11px] mt-1.5 pt-1.5 border-t border-slate-100">
-                                <span class="truncate">${product.location}</span>
-                            </div>
-                            <div class="mt-3">
-                                ${product.sellable === false ? `
 
-    <div class="w-full bg-slate-100 text-slate-400 text-xs font-bold py-2.5 px-3 rounded-xl text-center">
+</a>
 
-        View Only
+        `;
+
+    }).join("");
+/* AUTO LOADER */
+
+if (filteredProducts.length > visibleCategoryProducts) {
+
+    productContainer.innerHTML += `
+
+    <div id="scrollLoader"
+         class="col-span-full flex justify-center py-6">
+
+        <div class="flex flex-col items-center gap-2">
+
+            <div class="w-7 h-7 border-2 border-slate-200 border-t-emerald-600 rounded-full animate-spin"></div>
+
+            <span class="text-xs text-slate-400">
+                Loading more products...
+            </span>
+
+        </div>
 
     </div>
 
-` : quantity === 0 ? `
+    `;
 
-    <button onclick="updateItemQuantity(${product.id}, 1); renderCategoryProducts('${hub}');"
-        class="w-full bg-slate-900 hover:bg-emerald-600 text-white text-xs font-bold py-2.5 px-3 rounded-xl transition-all">
+    observeScrollLoader(hub);
 
-        Add to Cart
+}
 
-    </button>
 
-` : `
-                                    <div class="flex items-center justify-between w-full bg-slate-100 rounded-xl p-1 border border-slate-200/50">
-                                        <button onclick="updateItemQuantity(${product.id}, -1); renderCategoryProducts('${hub}');" class="w-8 h-8 rounded-lg bg-white font-bold text-slate-700 flex items-center justify-center"> - </button>
-                                        <span class="text-xs font-bold text-slate-900">${quantity}</span>
-                                        <button onclick="updateItemQuantity(${product.id}, 1); renderCategoryProducts('${hub}');" class="w-8 h-8 rounded-lg bg-white font-bold text-slate-700 flex items-center justify-center"> + </button>
-                                    </div>
-                                `}
-                            </div>
-                        </div>
-                    </div>
-                `;
-            }).join("");
-        }
+}
+
 
         function showCategoryCardsAgain() {
             const categoryCardsGrid = document.querySelector('#categoriesPageLayout .grid');
@@ -2559,32 +2529,124 @@ gridContainer.appendChild(moreProductsBtn);
             // Optional chart rendering calculations can go here
         }
 </script>
-    <script>
+<script>
+
+function openSearchPage() {
+
+    navigateToTab('categories');
+
+    setTimeout(() => {
+
+        const categorySearch =
+            document.getElementById("categorySearchInput");
+
+        if (categorySearch) {
+
+            categorySearch.focus();
+
+        }
+
+    }, 300);
+
+}
+
+</script>
+<script>
 
 /* Desktop Search */
+let visibleCategoryProducts = 5;
 const desktopSearch = document.getElementById("searchInput");
 
 /* Mobile Search */
 const mobileSearch = document.getElementById("searchInputMobile");
 
-/* Sync both search bars */
+
+/* SEARCH FUNCTION */
+function performSearch(value) {
+
+    const searchValue = value.toLowerCase().trim();
+
+    /* ALL PRODUCT CARDS */
+    const cards = document.querySelectorAll("[data-search]");
+
+    cards.forEach(card => {
+
+        const searchableText =
+            card.dataset.search.toLowerCase();
+
+        const matched =
+            searchableText.includes(searchValue);
+
+        if (matched || searchValue === "") {
+
+            card.style.display = "flex";
+
+        } else {
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+    /* HANDLE HOME SECTIONS */
+    const sections =
+        document.querySelectorAll(".home-section");
+
+    sections.forEach(section => {
+
+        const visibleCards =
+            [...section.querySelectorAll("[data-search]")]
+            .filter(card => card.style.display !== "none");
+
+        if (visibleCards.length === 0 && searchValue !== "") {
+
+            section.style.display = "none";
+
+        } else {
+
+            section.style.display = "block";
+
+        }
+
+    });
+
+}
+
+
+/* SYNC INPUTS */
 function syncSearchInputs(source, target) {
+
     source.addEventListener("input", () => {
+
         target.value = source.value;
 
-        /* Trigger your existing filtering */
-        const event = new Event("input");
-        target.dispatchEvent(event);
+        performSearch(source.value);
+
     });
+
 }
 
-/* Sync desktop -> mobile */
+
+/* ENABLE BOTH SEARCH BARS */
 if (desktopSearch && mobileSearch) {
+
     syncSearchInputs(desktopSearch, mobileSearch);
 
-    /* Sync mobile -> desktop */
     syncSearchInputs(mobileSearch, desktopSearch);
+
 }
+
+
+/* DIRECT SEARCH */
+desktopSearch?.addEventListener("input", (e) => {
+    performSearch(e.target.value);
+});
+
+mobileSearch?.addEventListener("input", (e) => {
+    performSearch(e.target.value);
+});
+
 
 function renderHomeSections() {
 
@@ -2592,7 +2654,12 @@ function renderHomeSections() {
         { title: "Local Market", key: "Local Market" },
         { title: "Restaurant", key: "Restaurant" },
         { title: "Hotel", key: "Hotel" },
-                { title: "Electronics", key: "Electronics" }
+        { title: "Electronics", key: "Electronics" },
+        { title: "Butchery", key: "Butchery" },
+        { title: "Bakery", key: "Bakery" },
+        { title: "Hardware", key: "Hardware" },
+        { title: "Gas Station", key: "Gas Station" },
+        { title: "Supermarket", key: "Supermarket" }
     ];
 
     const container = document.getElementById("homeSections");
@@ -2609,7 +2676,8 @@ function renderHomeSections() {
 
         const sectionEl = document.createElement("div");
 
-        sectionEl.className = "mt-6 px-3";
+        /* IMPORTANT */
+        sectionEl.className = "home-section mt-6 px-3";
 
         sectionEl.innerHTML = `
             
@@ -2620,128 +2688,240 @@ function renderHomeSections() {
                     ${section.title}
                 </h2>
 
-                <!-- FIXED NAV TO CATEGORIES + FILTER -->
-<span
-    onclick="
-        navigateToTab('categories');
-        showQuickLoader();
+                <span
+                    onclick="openCategoryPage('${section.key}');
+                        showQuickLoader();
 
-        window.currentCategoryHub='${section.key}';
+                        window.currentCategoryHub='${section.key}';
 
-        renderCategoryProducts('${section.key}');
-    "
-    class="text-xs text-orange-500 font-semibold cursor-pointer hover:text-emerald-600 transition-colors">
+                        renderCategoryProducts('${section.key}');
+                    "
+                    class="text-xs text-orange-500 font-semibold cursor-pointer hover:text-emerald-600 transition-colors">
 
-    See all →
+                    See all →
 
-</span>
+                </span>
 
             </div>
 
-            <!-- SCROLL SECTION -->
+            <!-- SCROLL -->
             <div class="flex gap-3 overflow-x-auto pb-2 snap-x">
 
                 ${sectionProducts.map(product => {
 
-                    const qty = cartMemory[product.id]?.quantity || 0;
+                    const qty =
+                        cartMemory[product.id]?.quantity || 0;
 
-                    const isDiscount = Number(product.oldPrice) > Number(product.price);
+                    const isDiscount =
+                        Number(product.oldPrice) >
+                        Number(product.price);
 
                     return `
 
-                        <div class="min-w-[160px] max-w-[160px] bg-white border border-slate-100 rounded-2xl p-3 snap-start shrink-0 flex flex-col justify-between shadow-sm">
+<a href="${product.link}" target="_blank" class="block">
 
-                            <!-- IMAGE -->
-                            <div class="aspect-square bg-slate-100 rounded-xl mb-2"></div>
+<div
 
-                            <!-- NAME -->
-                            <div class="text-xs font-bold text-slate-800 line-clamp-1">
-                                ${product.name}
-                            </div>
+data-search="
+${product.name}
+${product.category}
+${product.structuralType}
+${product.location}
+${product.state}
+"
 
-                            <!-- LOCATION -->
-                            <div class="text-[10px] text-slate-500">
-                                ${product.location}
-                            </div>
+class="min-w-[160px] max-w-[160px] bg-white border border-slate-100 rounded-2xl p-3 snap-start shrink-0 flex flex-col justify-between shadow-sm hover:shadow-md transition-all duration-300">
 
-                            <!-- PRICE -->
-                            <div class="mt-1">
+<!-- IMAGE -->
+<div class="aspect-square bg-slate-100 rounded-xl mb-2 overflow-hidden flex items-center justify-center">
 
-                                ${isDiscount ? `
-                                    <div class="flex items-center gap-2">
-                                        <span class="text-[10px] text-slate-400 line-through decoration-dashed">
-                                            ₦${Number(product.oldPrice).toLocaleString()}
-                                        </span>
+    <img
+        src="${product.image}"
+        alt="${product.name}"
+        class="w-full h-full object-contain scale-110 hover:scale-115 transition duration-300"
+        referrerpolicy="no-referrer"
+        loading="lazy"
+        onerror="this.onerror=null;this.src='https://via.placeholder.com/500x500?text=No+Image';">
 
-                                        <span class="text-[9px] bg-rose-100 text-rose-600 px-1.5 py-0.5 rounded">
-                                            -${Math.round(((product.oldPrice - product.price) / product.oldPrice) * 100)}%
-                                        </span>
-                                    </div>
-                                ` : ``}
+</div>
 
-                                <div class="text-xs font-bold text-emerald-600">
-                                    ₦${Number(product.price).toLocaleString()}
-                                </div>
+<!-- NAME -->
+<div class="text-xs font-bold text-slate-800 line-clamp-1">
+    ${product.name}
+</div>
 
-                            </div>
+<!-- LOCATION -->
+<div class="text-[10px] text-slate-500">
+    ${product.location}
+</div>
 
-                            <!-- BUTTON -->
-                            <div class="mt-2">
+<!-- PRICE -->
+<div class="mt-1">
 
-                                ${product.sellable === false ? `
+    ${isDiscount ? `
+        <div class="flex items-center gap-2">
 
-                                    <div class="text-[10px] text-slate-400 bg-slate-100 rounded-md py-1 text-center">
-                                        View Only
-                                    </div>
+            <span class="text-[10px] text-slate-400 line-through decoration-dashed">
+                ₦${Number(product.oldPrice).toLocaleString()}
+            </span>
 
-                                ` : qty === 0 ? `
+            <span class="text-[9px] bg-rose-100 text-rose-600 px-1.5 py-0.5 rounded">
+                -${Math.round(((product.oldPrice - product.price) / product.oldPrice) * 100)}%
+            </span>
 
-                                    <button onclick="updateItemQuantity(${product.id}, 1)"
-                                        class="w-full text-[10px] bg-slate-900 text-white py-1.5 rounded-md hover:bg-emerald-600 transition-all">
+        </div>
+    ` : ``}
 
-                                        Add
+    <div class="text-xs font-bold text-emerald-600">
+        ₦${Number(product.price).toLocaleString()}
+    </div>
 
-                                    </button>
+</div>
 
-                                ` : `
+<!-- BUTTON -->
+<div class="mt-2">
 
-                                    <div class="flex justify-between items-center bg-slate-100 rounded-md px-1 py-1">
+    ${product.sellable === false ? `
 
-                                        <button onclick="updateItemQuantity(${product.id}, -1)"
-                                            class="w-6 h-6 bg-white rounded text-xs">
+        <div class="text-[10px] text-slate-400 bg-slate-100 rounded-md py-1 text-center">
+            View Only
+        </div>
 
-                                            -
+    ` : qty === 0 ? `
 
-                                        </button>
+        <button onclick="updateItemQuantity(${product.id}, 1)"
+            class="w-full text-[10px] bg-slate-900 text-white py-1.5 rounded-md hover:bg-emerald-600 transition-all">
 
-                                        <span class="text-xs font-bold">
-                                            ${qty}
-                                        </span>
+            Add
 
-                                        <button onclick="updateItemQuantity(${product.id}, 1)"
-                                            class="w-6 h-6 bg-white rounded text-xs">
+        </button>
 
-                                            +
+    ` : `
 
-                                        </button>
+        <div class="flex justify-between items-center bg-slate-100 rounded-md px-1 py-1">
 
-                                    </div>
+            <button onclick="updateItemQuantity(${product.id}, -1)"
+                class="w-6 h-6 bg-white rounded text-xs">
 
-                                `}
+                -
 
-                            </div>
+            </button>
 
-                        </div>
+            <span class="text-xs font-bold">
+                ${qty}
+            </span>
+
+            <button onclick="updateItemQuantity(${product.id}, 1)"
+                class="w-6 h-6 bg-white rounded text-xs">
+
+                +
+
+            </button>
+
+        </div>
+
+    `}
+
+</div>
+
+</div>
+
+</a>
 
                     `;
+
                 }).join("")}
 
             </div>
+
         `;
 
         container.appendChild(sectionEl);
+
     });
+
 }
+
+let loaderObserver;
+let isLoadingProducts = false;
+
+function observeScrollLoader(hub) {
+
+    const loader =
+        document.getElementById("scrollLoader");
+
+    if (!loader) return;
+
+    if (loaderObserver) {
+
+        loaderObserver.disconnect();
+
+    }
+
+    loaderObserver =
+        new IntersectionObserver((entries) => {
+
+            if (
+                entries[0].isIntersecting &&
+                !isLoadingProducts
+            ) {
+
+                isLoadingProducts = true;
+
+                setTimeout(() => {
+
+                    visibleCategoryProducts += 5;
+
+                    renderCategoryProducts(hub);
+
+                    isLoadingProducts = false;
+
+                }, 800);
+
+            }
+
+        }, {
+            rootMargin: "200px"
+        });
+
+    loaderObserver.observe(loader);
+
+}
+</script>
+
+<script>
+
+function openCategoryPage(hub) {
+renderCategoryProducts(hub);
+visibleCategoryProducts = 12;
+    /* SAVE */
+    window.currentCategoryHub = hub;
+
+    /* HIDE HOME */
+    const homeSections =
+        document.getElementById("homeSections");
+
+    if (homeSections) {
+
+        homeSections.style.display = "none";
+
+    }
+
+    /* SHOW CATEGORY PAGE */
+    const categoriesPage =
+        document.getElementById("categoriesPage");
+
+    if (categoriesPage) {
+
+        categoriesPage.style.display = "block";
+
+    }
+
+    /* LOAD PRODUCTS */
+    renderCategoryProducts(hub);
+
+}
+
 </script>
 <script>
 
@@ -2807,3 +2987,5 @@ function showQuickLoader() {
 
 </body>
 </html>
+
+
